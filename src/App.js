@@ -1,58 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, { useState } from 'react';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+	const [value, setValue] = useState(1)
+
+	const actions = (action) => {
+		switch (action.type) {
+			case "minus":
+				setValue(value > 0 ? value - (action?.count ?? 1) : value)
+				break;
+			case "plus":
+				setValue(value < 7 ? value + action.count : value)
+				break;
+			default: return null;
+		}
+	}
+
+	return (
+		<div className="App">
+			<h1>Count: {value}</h1>
+			<button onClick={() => actions({ type: "minus",  count: 2 })} disabled={value === 0}>minus</button>
+			<button onClick={() => actions({ type: "plus", count: 3 })} disabled={value === 7}>add</button>
+		</div>
+	);
 }
 
 export default App;
