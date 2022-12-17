@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import App from './components/Varsik/App';
 
 
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
