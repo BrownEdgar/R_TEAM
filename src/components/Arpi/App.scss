@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.Box{
+    margin: 20px auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+}
+
+.List{
+    display:  flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 20px auto ;
+    gap: 16px;
+}
