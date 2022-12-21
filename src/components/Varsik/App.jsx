@@ -13,7 +13,9 @@ export default function App() {
 
     useEffect(() => {
         const getData = () => {
-            fetch("https://fakestoreapi.com/products").then(res => res.json()).then(json => setData(json))
+            fetch("https://fakestoreapi.com/products")
+						.then(res => res.json())
+						.then(json => setData(json))
         }
         getData()
     }, [])

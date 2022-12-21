@@ -9,10 +9,8 @@ export default function App() {
     useEffect(() =>{
         const getData =() =>{
             fetch('https://fakestoreapi.com/products?limit=3')
-            .then(res =>res.json())
-            .then(json =>setData(json))
-            
-
+            .then(res => res.json())
+            .then(json => setData(json))
         }
         getData()
     }, [])
@@ -25,7 +23,7 @@ export default function App() {
         <div className='List'>
         {
         data.map(product =>{
-            return <Products key = {product.id} product = {product}/>
+            return <Products key={product.id} product={product}/>
         })
         }
     </div>

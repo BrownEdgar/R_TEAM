@@ -9,7 +9,7 @@ export default function Component({obj,handleDalete}) {
       <p>{obj.title}</p>
       <h2>{obj.body}</h2>
       <span>{obj.text}</span>
-      <a href='#'>{obj.link}</a>
+      <a href='/'>{obj.link}</a>
     </div>
   )
 }

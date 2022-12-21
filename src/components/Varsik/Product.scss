@@ -3,10 +3,12 @@
     height: 450px;
     display: flex;
     flex-direction: column;
+		justify-content: space-between;
     padding: 25px;
     border: 1px solid gray;
     margin-bottom: 20px;
     position: relative;
+		padding: 1rem;
     &-Delete{
         position: absolute;
         right: 10px;
@@ -24,13 +26,5 @@
     &-ReadMore{
         text-decoration: underline;
         cursor: pointer;
-        position: absolute;
-        bottom: 10px;
-        left: 40%;
-    }
-    &-description{
-        position: absolute;
-        top: 34%;
-        right: 3px;
-    }
+		}
 }
