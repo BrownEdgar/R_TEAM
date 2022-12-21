@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import Product from './Product';
+import React from 'react'
+import Text from './Text';
 
 import "./App.scss"
 
 export default function App() {
+<<<<<<< HEAD
     const [data, setData] = useState([]);
 
     const handleDelete = (id) => {
@@ -20,13 +21,14 @@ export default function App() {
         getData()
     }, [])
 
+=======
+>>>>>>> 759b6ca8f715708598c41ee52d02b06cc90dec49
 
   return (
     <div className='List'>
-        {data.map(product => {
-            return <Product key={product.id} product={product} handleDelete={handleDelete}/>
-        })
-        }
+        <Text as={"p"} clName={"box"} theme={"dark"}>
+          My Tag
+        </Text>
     </div>
   )
 }
