@@ -21,7 +21,6 @@ export default function App() {
     }, [])
 
 
-
   return (
     <div className='List'>
         <Text as={"p"} clName={"box"} theme={"dark"}>
