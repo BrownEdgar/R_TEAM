@@ -4,7 +4,6 @@ import Text from './Text';
 import "./App.scss"
 
 export default function App() {
-<<<<<<< HEAD
     const [data, setData] = useState([]);
 
     const handleDelete = (id) => {
@@ -21,8 +20,6 @@ export default function App() {
         getData()
     }, [])
 
-=======
->>>>>>> 759b6ca8f715708598c41ee52d02b06cc90dec49
 
   return (
     <div className='List'>

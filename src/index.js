@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import App from './components/Varsik/App';
+import App from './components/Rubo/homework/App';
 
 
 
