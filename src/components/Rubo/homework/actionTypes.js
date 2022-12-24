@@ -1,0 +1,7 @@
+export const FETCH_START = "FETCH_START"
+export const FETCH_SUCCESS = "FETCH_SUCCESS"
+export const FETCH_FAILURE = "FETCH_FAILURE"
+export const COUNT_PLUS = "COUNT_PLUS"
+export const COUNT_MINUS = "COUNT_MINUS"
+export const COUNT_RESET = "COUNT_RESET"
+export const COUNT_SPECIFIC_NUMBER = "COUNT_SPECIFIC_NUMBER"
