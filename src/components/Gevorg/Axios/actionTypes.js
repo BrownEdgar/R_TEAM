@@ -1,0 +1,3 @@
+export const AXIOS_START = 'AXIOS_START'
+export const AXIOS_SUCCESS = 'AXIOS_SUCCESS'
+export const AXIOS_FAILURE = 'AXIOS_FAILURE'

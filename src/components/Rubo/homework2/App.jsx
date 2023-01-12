@@ -32,10 +32,10 @@ export default function App() {
             <h3><span> Title: </span> {state.product.title}</h3>
             <h3><span> Description:</span> {state.product.description}</h3>
             <h3><span> Rating:</span> {state.product.rating}</h3>
-            <h3><span> Price:</span> $ {state.product.price}</h3>
+            <h3><span> Price:</span> {state.product.price}</h3>
             <p><span> Brand:</span> {state.product.brand}</p>
             <img src={state.product.thumbnail} alt="" />
-        <button onClick={getProduct}>{state.loading? "wait" : "getProduct"}</button>
+        <button onClick={getProduct}>{state.loading ? "wait" : "getProduct"}</button>
         </div>
     </div>
   )

@@ -5,8 +5,7 @@ export default function CustomHook(initialState) {
         state:initialState,
     })
     const sortPrice = () => {
-        let newData = data.state.filter(elem => elem.price)
-        .sort((a,b)=> a.price - b.price)
+        let newData = data.state.sort((a,b)=> a.price - b.price)
         setData({
             ...data,
            state: newData
