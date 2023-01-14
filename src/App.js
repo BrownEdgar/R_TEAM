@@ -1,27 +1,39 @@
 import React, { useState } from 'react';
+import About from './components/About';
+import Blog from './components/Blog';
+import Home from './components/Home';
+import Navbar from './components/Navbar/Navbar';
 
 import './App.css';
+import { Routes, Route } from 'react-router';
+import Error404 from './components/404';
+import SpecialPage from './components/SpecialPage';
+import { ROUTES } from './components/Routes/Routes';
+import Layouts from './components/Layouts';
 
 function App() {
-	const [value, setValue] = useState(1)
-
-	const actions = (action) => {
-		switch (action.type) {
-			case "minus":
-				setValue(value > 0 ? value - (action?.count ?? 1) : value)
-				break;
-			case "plus":
-				setValue(value < 7 ? value + action.count : value)
-				break;
-			default: return null;
-		}
-	}
-
+	const [friends, setfriends] = useState([
+		'Rachel Green', 
+		'Monica Geller', 
+		'Phoebe Buffay', 
+		'Joey Tribbiani', 
+		'Chandler Bing', 
+		'Ross Geller']);
 	return (
 		<div className="App">
-			<h1>Count: {value}</h1>
-			<button onClick={() => actions({ type: "minus",  count: 2 })} disabled={value === 0}>minus</button>
-			<button onClick={() => actions({ type: "plus", count: 3 })} disabled={value === 7}>add</button>
+
+			<Routes>
+
+				<Route path={ROUTES.HOME} element={<Layouts />}>
+					<Route index  element={<Home />} />
+					<Route path={ROUTES.ABOUT} element={<About friends={friends} />} />
+					<Route path={ROUTES.USER_PAGE} element={<SpecialPage friends={friends} />} />
+					<Route path={ROUTES.BLOG} element={<Blog />} />
+					<Route path={ROUTES.ERROR_PAGE} element={<Error404 />} />
+				</Route>
+			
+			</Routes>
+
 		</div>
 	);
 }
