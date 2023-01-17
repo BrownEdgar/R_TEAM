@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 import * as yup from 'yup'
 
@@ -25,15 +25,7 @@ const initialValues = {
     email: ""
 }
 
-export default function Login() {
-    const [data, setData] = useState()
-
-    const onSubmit = values => {
-        setData(values)
-    }
-    console.log([data]);
-
-    
+export default function Login({ onSubmit }) {
 
     return (
         <Formik
