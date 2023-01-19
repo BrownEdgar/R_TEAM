@@ -17,3 +17,19 @@ a {
 	font-size: 22px;
 	display: block;
 }
+
+button {
+	padding: 1rem;
+	border: none;
+	margin: 12px;
+	border-radius: 12px;
+	background-image: linear-gradient(to right, #b1e115, #09efb5);
+	font-weight: 700;
+	width: 150px;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+button.active {
+	border: 2px solid #000;
+}
