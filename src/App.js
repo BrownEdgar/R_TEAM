@@ -1,27 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { ADD_POST } from './store/actionsTypes';
 
 import './App.css';
+import Component from './components/Component';
 
 function App() {
-	const [value, setValue] = useState(1)
 
-	const actions = (action) => {
-		switch (action.type) {
-			case "minus":
-				setValue(value > 0 ? value - (action?.count ?? 1) : value)
-				break;
-			case "plus":
-				setValue(value < 7 ? value + action.count : value)
-				break;
-			default: return null;
+	// const state = useSelector(state => state);
+	const dispatch = useDispatch()
+
+
+	// const handleClick2 = () => {
+	// 	dispatch({ type: CLEAR_DATA, })
+	// }
+	const posts = useSelector(state => state.posts);
+	const handleClick = () => {
+		const newPost = {
+			id: 4,
+			userId: 2,
+			title: "Lorem ipsum dolor sit amet.",
+			body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo beatae at et."
 		}
+		dispatch({ type: ADD_POST, payload: newPost })
 	}
-
 	return (
 		<div className="App">
-			<h1>Count: {value}</h1>
-			<button onClick={() => actions({ type: "minus",  count: 2 })} disabled={value === 0}>minus</button>
-			<button onClick={() => actions({ type: "plus", count: 3 })} disabled={value === 7}>add</button>
+
+			{posts.map(elem => {
+				return (
+					<div key={elem.id}>
+						<h3>{elem.title}</h3>
+						<p>{elem.body}</p>
+					</div>
+				)
+			})}
+
+			<button onClick={handleClick}>change name</button>
+				<hr />
+				<Component  />
 		</div>
 	);
 }
