@@ -4,6 +4,7 @@ import { ADD_POST } from './store/actionsTypes';
 
 import './App.css';
 import Component from './components/Component';
+import { addPost, loadAsyncData } from './store/features/postsSlice';
 
 function App() {
 
@@ -15,14 +16,9 @@ function App() {
 	// 	dispatch({ type: CLEAR_DATA, })
 	// }
 	const posts = useSelector(state => state.posts);
+	console.log(posts)
 	const handleClick = () => {
-		const newPost = {
-			id: 4,
-			userId: 2,
-			title: "Lorem ipsum dolor sit amet.",
-			body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo beatae at et."
-		}
-		dispatch({ type: ADD_POST, payload: newPost })
+		dispatch(loadAsyncData())
 	}
 	return (
 		<div className="App">
@@ -32,11 +28,12 @@ function App() {
 					<div key={elem.id}>
 						<h3>{elem.title}</h3>
 						<p>{elem.body}</p>
+						<p>createdAt: {elem?.createdAt?.toLocaleTimeString() || "unknown"}</p>
 					</div>
 				)
 			})}
 
-			<button onClick={handleClick}>change name</button>
+			<button onClick={handleClick}>add post</button>
 				<hr />
 				<Component  />
 		</div>

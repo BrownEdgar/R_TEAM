@@ -1,4 +1,5 @@
 import { ADD_POST } from "../actionsTypes";
+import { getAsyncPost } from "./postApi";
 
 export const initialPostsValue = [
 	{
@@ -25,4 +26,20 @@ export function postsReducer(state = [], action) {
 		return [...state, action.payload]
 	}
 	return state;
+}
+
+//action creater
+export function addPost(post) {
+	return {
+		type: ADD_POST,
+		payload: post
+	}
+}
+
+
+export function loadAsyncData() {
+	return async function (dispatch) {
+			const asyncPost = await getAsyncPost();
+		dispatch(addPost(asyncPost));
+	}
 }
