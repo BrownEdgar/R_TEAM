@@ -1,19 +1,19 @@
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import { ADD_POST, DELETE_SERIAL_BY_ID } from "./actionsTypes";
-import { initialPostsValue, postsReducer } from "./features/postsSlice";
-import { initialSerialsValue, serialsReducer } from "./features/serialsSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import  postsSlice  from "./features/postsSlice";
+import  randomSlice  from "./features/randomSlice";
+import serialsSlice from "./features/serialsSlice";
+import  usersSlice  from "./features/usersSlice";
 
-import thunk from "redux-thunk"
+
+const store = configureStore({
+	reducer: {
+		posts: postsSlice,
+		serials: serialsSlice,
+		users: usersSlice,
+		randomNumbers: randomSlice
+	}
+})
 
 
-const initialState = {
-	serials: initialSerialsValue,
-	posts: initialPostsValue,
-}
-
-const store = createStore(combineReducers({
-	serials: serialsReducer,
-	posts: postsReducer
-}), initialState, applyMiddleware(thunk));
 
 export default store;

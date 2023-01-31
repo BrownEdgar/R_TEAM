@@ -1,16 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DELETE_SERIAL_BY_ID } from '../store/actionsTypes';
+
+import { deleteSerialsById } from '../store/features/serialsSlice';
 
 import "./Component.css"
-export default function Component() {
+export default function Serials() {
 
 	const serials = useSelector(state => state.serials)
 	const dispstnch =  useDispatch()
 
 	const deleteById = (id) => {
-		dispstnch({ type: DELETE_SERIAL_BY_ID, payload: id })
+		dispstnch(deleteSerialsById({id}))
 	}
+
 	return (
 		<div className='flex'>
 			{

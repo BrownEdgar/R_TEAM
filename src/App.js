@@ -1,47 +1,35 @@
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {changePost, deleteData, loadAsyncData } from './store/features/postsSlice';
-import Component from './components/Component';
-
+import Serials from './components/Component';
 
 import './App.css';
+import { asyncPost } from './store/features/postsSlice';
+import UsersList from './components/UsersList';
+import { fillArray } from './store/features/randomSlice';
 
 function App() {
 
-	// const state = useSelector(state => state);
+	const num = useSelector(state => state.randomNumbers);
+	console.log(num);
 	const dispatch = useDispatch()
 
+	const addNumber = (count) => { 
+		dispatch(fillArray({count}))
+	 }
 
 	const posts = useSelector(state => state.posts);
-	console.log(posts)
-	const handleClick = () => {
-		dispatch(loadAsyncData())
-	}
-	// const deletePostById = (id) => { 
-	// 	dispatch(deleteData(id))
-	// }
-	// const handleSubmit = (e) => { 
-	// 	e.preventDefault();
-	// 	const data = {
-	// 		id: e.target[1].value,
-	// 		title: e.target[0].value,
-	// 	}
-	// 	dispatch(changePost(data))
-	// }
+	const handleClick = () => { 
+		console.log(":aaaa")
+		dispatch(asyncPost())
+	 }
+
 	return (
 		<div className="App">
 			<div className="flex">
 				<button onClick={handleClick}>add posts</button>
-				{/* <button onClick={() => deletePostById(1)}>delete post</button> */}
+				
 			</div>
-
-			{/* <form onSubmit={handleSubmit}>
-				<input type="text" id="title" required/>
-				<input type="number" name="postid" id="postid" min={1} max={50}/>
-				<input type="submit"  value="change post title"/>
-			</form> */}
-
 				<div className="flex_container">
 				{posts.map(elem => {
 					return (
@@ -54,8 +42,10 @@ function App() {
 					)
 				})}
 				</div>
+				<button onClick={() => addNumber(10)}>ADD</button>
 				<hr />
-
+					<Serials /> 
+					<UsersList />
 		</div>
 	);
 }
