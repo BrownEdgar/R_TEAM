@@ -1,8 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App';
+import App from './Redux_4_homework_Arpi/App';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import store from './Redux_4_homework_Arpi/store/store';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

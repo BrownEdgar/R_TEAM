@@ -60,7 +60,7 @@ export const postsSlice = createSlice({
 			console.log("Loading...")
 		})
 		.addCase(asyncPost.fulfilled, (state,action) => {
-			console.log("fulfilled:", action)
+			
 			return action.payload
 		})
 		.addCase(asyncPost.rejected, (state,action) => {
