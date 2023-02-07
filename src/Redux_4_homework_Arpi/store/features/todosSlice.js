@@ -10,6 +10,19 @@ export const asyncTodos =  createAsyncThunk(
     }
 )
 
+
+export const getAllTodosList = (state => state.todos);
+
+export const getAllComplitedTodos = (state => {
+	return state.todos.filter(todo => todo.completed)
+})
+export const getAllUnComplitedTodos = (state => {
+	return state.todos.filter(todo => !todo.completed)
+})
+
+
+
+
 export const todosSlice = createSlice({
     name:"todos",
     initialState : initialTodosvalue,
@@ -24,7 +37,8 @@ export const todosSlice = createSlice({
             console.log("Loading...")
         })
         .addCase(asyncTodos.fulfilled ,(state, action)=>{
-            console.log("Todos:", action.payload)
+            console.log("Todos:", action.payload);
+					return action.payload
         })
         .addCase(asyncTodos.rejected ,(state, action)=>{
             console.log("cancellation")

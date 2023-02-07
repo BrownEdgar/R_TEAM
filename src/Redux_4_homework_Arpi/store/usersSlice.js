@@ -24,7 +24,7 @@ export const usersSlice =  createSlice({
             
         })
         .addCase(asyncUsers.fulfilled, (state, action)=>{
-			console.log("Users:", action.payload)
+		
 
             return action.payload
         })

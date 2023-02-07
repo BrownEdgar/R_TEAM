@@ -24,7 +24,8 @@ export const photosSlice = createSlice({
             console.log("Loading...")
         })
         .addCase(asyncPhotos.fulfilled, (satae, action)=>{
-            console.log("Photos", action.payload)
+            console.log("Photos", action.payload);
+					return action.payload
         })
         .addCase(asyncPhotos.rejected, (satae, action)=>{
             console.log("cancellation")
