@@ -8,6 +8,7 @@ import { asyncTodos, getAllComplitedTodos, getAllTodosList, getAllUnComplitedTod
 import { asyncUsers } from './store/usersSlice'
 
 import TodoList from './component/TodoList'
+import ReselectEx from '../components/ReselectEx'
 
 
 
@@ -16,7 +17,7 @@ export default function App() {
 	const allTodo = useSelector(getAllTodosList)
 	const complitedTodo = useSelector(getAllComplitedTodos)
 	const uncomplitedTodo = useSelector(getAllUnComplitedTodos)
-	console.log({ allTodo, complitedTodo, uncomplitedTodo })
+
 	const [options, setOptions] = useState({
 		limit: 10,
 		entities: "users"
@@ -80,11 +81,14 @@ export default function App() {
 					<input type="number" max={options.limit} min={1} />
 					<input type="submit" />
 				</form>
+				
 			</div>
 	
 			<TodoList options={{target: "users", count: 5}} />
 
 			<button onClick={() => dispatch(myOwnPost())}> Click</button>
+			<hr />
+			<ReselectEx />
 		</div>
 	)
 }

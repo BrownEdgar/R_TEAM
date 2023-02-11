@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import testSlice from "../../store/features/testSlice";
 import albumsSlice from "./features/albumsSlice";
 import commentsSlice from "./features/commentsSlice";
 import postsSlice from "./features/postSlice";
@@ -13,7 +14,8 @@ const store = configureStore({
         albums: albumsSlice,
         photos: photosSlice,
         todos: todosSlice,
-        users: usersSlice
+        users: usersSlice,
+				test: testSlice
 	}
 })
 

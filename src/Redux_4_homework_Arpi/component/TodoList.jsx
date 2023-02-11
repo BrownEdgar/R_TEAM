@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
  function TodoList({ target, data}) {
 	 const renderUser = (data) => {
-		console.log("datasssssssssssssssssssss:",data)
+	
 		return data.map(elem => {
 			return <p key ={elem.id}>{elem.name}</p>
 		})
@@ -26,9 +26,8 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = (state, {options}) => {
 	const { count, target } = options;
-	console.log({ count, target })
 	const data = state[target].slice(0,count);
-	console.log(data)
+
 	return {
 		data
 	}

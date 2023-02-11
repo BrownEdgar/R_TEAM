@@ -7,6 +7,7 @@ import './App.css';
 import { asyncPost } from './store/features/postsSlice';
 import UsersList from './components/UsersList';
 import { fillArray } from './store/features/randomSlice';
+import ReselectEx from './components/ReselectEx';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
 				<button onClick={() => addNumber(10)}>ADD</button>
 				<hr />
 					<Serials /> 
+					<ReselectEx />
 					<UsersList />
 		</div>
 	);
