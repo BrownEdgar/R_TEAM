@@ -25,6 +25,7 @@
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "sass": "^1.57.0",
     "scss": "^0.2.4",
@@ -33,7 +34,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-		"server": "json-server --watch ./data/db.json --port 8080",
+    "server": "json-server --watch ./data/db.json --port 8080",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -1,55 +1,52 @@
-
-import React from 'react';
+import React, {useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Serials from './components/Component';
+
 
 import './App.css';
-import { asyncPost } from './store/features/postsSlice';
-import UsersList from './components/UsersList';
-import { fillArray } from './store/features/randomSlice';
-import ReselectEx from './components/ReselectEx';
+import { addToDo, toggleError } from './store/features/toDoSlice';
+
 
 function App() {
-
-	const num = useSelector(state => state.randomNumbers);
-	console.log(num);
+	
+	const list = useSelector(state => state.toDoList.data)
+	const hasError = useSelector(state => state.toDoList.hasError)
+	useEffect(() => {
+		hasError && setTimeout(() => { dispatch(toggleError()) }, 2000)
+	})
 	const dispatch = useDispatch()
-
-	const addNumber = (count) => { 
-		dispatch(fillArray({count}))
-	 }
-
-	const posts = useSelector(state => state.posts);
-	const handleClick = () => { 
-		console.log(":aaaa")
-		dispatch(asyncPost())
-	 }
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		const { value } = e.target[0];
+		dispatch(addToDo(value))
+		e.target[0].value = ""
+	}
 
 	return (
-		<div className="App">
-			<div className="flex">
-				<button onClick={handleClick}>add posts</button>
-				
+		<div className='App'>
+			<div className={`error ${hasError && "active" }`}>
+				todo is alredy added to list!
 			</div>
-				<div className="flex_container">
-				{posts.map(elem => {
-					return (
-						<div key={elem.id}>
-							<span>{elem.id}</span>
-							<h3>{elem.title}</h3>
-							<p>{elem.body}</p>
-							<p>createdAt: {elem?.createdAt?.toLocaleTimeString() || "unknown"}</p>
-						</div>
-					)
-				})}
-				</div>
-				<button onClick={() => addNumber(10)}>ADD</button>
-				<hr />
-					<Serials /> 
-					<ReselectEx />
-					<UsersList />
+			<form onSubmit={handleSubmit}>
+				<input type="text" required />
+				<input type="submit" />
+			</form>
+
+			<hr />
+			<ul>
+				{
+					list.map(elme => {
+						return <li key={elme.id}>{elme.text}</li>
+					})
+				}
+			</ul>
+
 		</div>
-	);
+	)
 }
 
 export default App;
+
+
+
+
+
