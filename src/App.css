@@ -65,30 +65,37 @@ input[type="submit"]:hover {
 	color: #fff;
 }
 
-ul {
+ul  {
 	width: 40%;
 	margin: 12px auto;
 	list-style: none;
 	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 	height: 500px;
 	padding: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	align-content: start;
 	overflow-y: auto;
 }
 
-li {
-	padding: 1rem;
-	flex: 0 0 100%;
+ul > div {
+	display: flex;
+	justify-content: space-between;
 	box-shadow: rgba(18, 108, 157, 0.12) 0px 2px 4px 0px, rgba(8, 93, 116, 0.32) 0px 2px 16px 0px;
 	border-radius: 12px;
 	margin-bottom: 12px;
+	flex: 0 0 100%;
+	padding: 1rem;
+}
+
+li {
 	font-weight: 600;
 	cursor: pointer;
 	transition: 0.1s;
+}
+
+button {
+	border: 1px solid rgb(18, 108, 157);
+	padding: 4px;
+	border-radius: 30%;
+	cursor: pointer;
 }
 
 li:hover {

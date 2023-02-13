@@ -10,8 +10,6 @@ const toDoSlice = createSlice({
 	},
 	reducers:{
 		addToDo: (state, action) => {
-			 console.log(state);
-			
 			const isExist = state.data.find(elem => elem.text === action.payload)
 			if (!isExist) {
 				state.data.push({
@@ -25,10 +23,13 @@ const toDoSlice = createSlice({
 		},
 		toggleError: (state) => {
 			state.hasError = !state.hasError
+		},
+		deleteToDo: (state, action) => {
+			return state.data.filter(elem => elem.id !== action.payload)
 		}
 	}
 })
 
 
 export default toDoSlice.reducer;
-export const { addToDo, toggleError } = toDoSlice.actions;
+export const { addToDo, toggleError, deleteToDo } = toDoSlice.actions;

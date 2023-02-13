@@ -3,22 +3,28 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 import './App.css';
-import { addToDo, toggleError } from './store/features/toDoSlice';
+import { addToDo, toggleError, deleteToDo } from './store/features/toDoSlice';
 
 
 function App() {
+	const dispatch = useDispatch()
 	
 	const list = useSelector(state => state.toDoList.data)
 	const hasError = useSelector(state => state.toDoList.hasError)
+
 	useEffect(() => {
 		hasError && setTimeout(() => { dispatch(toggleError()) }, 2000)
 	})
-	const dispatch = useDispatch()
+	
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		const { value } = e.target[0];
 		dispatch(addToDo(value))
 		e.target[0].value = ""
+	}
+
+	const deleteList = (id) => {
+		dispatch(deleteToDo(id));
 	}
 
 	return (
@@ -34,8 +40,11 @@ function App() {
 			<hr />
 			<ul>
 				{
-					list.map(elme => {
-						return <li key={elme.id}>{elme.text}</li>
+					list.map(elem => {
+						return <div>
+							<li key={elem.id}>{elem.text}</li>
+							<button onClick={() => deleteList(elem.id)}>x</button>
+						</div>
 					})
 				}
 			</ul>
