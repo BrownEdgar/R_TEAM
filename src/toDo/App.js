@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 import './App.css';
-import { addToDo, toggleError, deleteToDo } from './store/features/toDoSlice';
+import { addToDo, toggleError, deleteToDo } from '../store/features/toDoSlice';
 
 
 function App() {

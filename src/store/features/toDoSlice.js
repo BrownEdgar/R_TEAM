@@ -25,7 +25,7 @@ const toDoSlice = createSlice({
 			state.hasError = !state.hasError
 		},
 		deleteToDo: (state, action) => {
-			return state.data.filter(elem => elem.id !== action.payload)
+			state.data =  state.data.filter(elem => elem.id !== action.payload)
 		}
 	}
 })
