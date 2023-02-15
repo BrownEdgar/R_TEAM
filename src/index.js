@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom'
-import App from './components/Arpi/React_Rout_homework/App/App';
+import App from './components/Gevorg/Lazy/AppTest';
 
 
 const container = document.getElementById('root');

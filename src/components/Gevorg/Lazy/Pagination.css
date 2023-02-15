@@ -1,0 +1,30 @@
+.pagination{
+    border: 2px solid #04AA6D;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    list-style: none;
+    display: flex;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.page-item button{
+    margin-left: 10px;
+    cursor: pointer;
+}
+/* button:hover, button:active {
+    background-color: green;
+    color: white;
+    padding: 5px 12px;
+
+} */
+button:link, button:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
