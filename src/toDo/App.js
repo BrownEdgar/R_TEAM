@@ -11,6 +11,8 @@ function App() {
 	
 	const list = useSelector(state => state.toDoList.data)
 	const hasError = useSelector(state => state.toDoList.hasError)
+	console.log(list);
+	
 
 	useEffect(() => {
 		hasError && setTimeout(() => { dispatch(toggleError()) }, 2000)
@@ -24,7 +26,7 @@ function App() {
 	}
 
 	const deleteList = (id) => {
-		dispatch(deleteToDo(id));
+		dispatch(deleteToDo({id}));
 	}
 
 	return (
@@ -41,8 +43,8 @@ function App() {
 			<ul>
 				{
 					list.map(elem => {
-						return <div>
-							<li key={elem.id}>{elem.text}</li>
+						return <div key={elem.id}>
+							<li>{elem.text}</li>
 							<button onClick={() => deleteList(elem.id)}>x</button>
 						</div>
 					})
