@@ -11,6 +11,8 @@ import Navbar from './Navbar'
 // check it: in thi console Sources -> static/js folder
 const Home = lazy(() => import("./Home"))
 
+const Bigest = lazy(() => import("./Bigest"))
+
 export default function App() {
   return (
     <div>
@@ -18,7 +20,9 @@ export default function App() {
         <Route path="/" element={<Navbar />} >
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+					<Route path="/big" element={<Bigest />} />
         </Route>
+			
       </Routes>
     </div>
   )

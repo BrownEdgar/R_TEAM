@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import App from './components/Edgar/Test/2023/App';
+import App from './components/Edgar/react-accordion/App';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 

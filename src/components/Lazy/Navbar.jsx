@@ -8,6 +8,7 @@ export default function Navbar() {
       <nav style={{ display: 'flex', gap: "16px" }}>
         <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
+				<Link to='/big'>Bigest</Link>
       </nav>
       {/*
        Lazy loading with  <Suspense> Component
