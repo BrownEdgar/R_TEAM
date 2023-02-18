@@ -29,43 +29,7 @@ export default function App() {
                 description: "Ինչ էլեմենտներ ունի Layout component-ը",
                 answer: "<Outlet> և <Link>",
                 isShow: false
-            },
-            {
-                id: 5,
-                description: "",
-                answer: "",
-                isShow: false
-            },
-            {
-                id: 6,
-                description: "",
-                answer: "",
-                isShow: false
-            },
-            {
-                id: 7,
-                description: "",
-                answer: "",
-                isShow: false
-            },
-            {
-                id: 8,
-                description: "",
-                answer: "",
-                isShow: false
-            },
-            {
-                id: 9,
-                description: "",
-                answer: "",
-                isShow: false
-            },
-            {
-                id: 10,
-                description: "",
-                answer: "",
-                isShow: false
-            },
+            }
         ]
     })
 
