@@ -1,0 +1,46 @@
+.home_container {
+  width: 100%;
+  height: 509px;
+  display: flex;
+  justify-content: space-between;
+}
+.home_container div {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(235, 224, 224);
+}
+.home_container h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 60px;
+  color: rgb(205, 211, 82);
+  text-shadow: 5px 5px 5px black;
+  line-height: 5rem;
+  margin: 20px 30px;
+}
+.home_container button {
+  padding: 10px 26px;
+  background: black;
+  color: rgb(205, 211, 82);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.home_container button:hover {
+  background-color: rgb(99, 97, 97);
+  text-shadow: 5px 5px 5px black;
+  box-shadow: inset 5px 5px 5px black;
+}
+.home_container .logo {
+  width: 65%;
+  background-color: rgb(205, 211, 82);
+}
+.home_container img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=Home.css.map */

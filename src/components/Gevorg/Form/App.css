@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#f05053, #e1eec3);
+  height: 100%;
+  margin: 0;
+  color: #555;
+}
+
+.form-div {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  margin-left: 70px;
+}
+
+.Form {
+  width: 50%;
+  margin: 0 auto;
+  text-align: -webkit-center;
+  border-radius: 10px;
+}
+.Form input {
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 6px;
+  margin: 10px auto;
+  display: block;
+  width: 96%;
+}
+.Form h1 {
+  text-align: center;
+}
+.Form button {
+  padding: 10px 60px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 20px;
+}/*# sourceMappingURL=App.css.map */
