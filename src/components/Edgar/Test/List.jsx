@@ -14,8 +14,6 @@ export default function List({ data, deletedElem }) {
 								<li >{elem.amount}</li>
 								<hr />
 							</Fragment>
-						
-
 					)
 					})
 				}
