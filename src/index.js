@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom'
-import App from './components/Gevorg-React/Netflix/Footer/Footer';
+import App from './App';
 
 
 const container = document.getElementById('root');
