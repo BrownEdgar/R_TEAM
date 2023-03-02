@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import FAQList from './components/FAQList'
+import FAQList from './FAQList'
 
 import "./App.scss"
 

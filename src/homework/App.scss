@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+    max-width: 1142px;
+    margin: 0 auto;
+    &-Content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        .Data{
+            width: 21%;
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            box-shadow: 2px 3px 7px 0px gray;
+            &-Content{
+                padding: 4px;
+                span{
+                    font-weight: bold;
+                }
+            }
+            &-items{
+                div{
+                    position: absolute;
+                    left: 196px;
+                    top: 8px;
+                    width: 10px;
+                    height: 10px;
+                    background-color: lime;
+                    border-radius: 50%;
+                    opacity: 0;
+                }
+                .show{
+                    opacity: 1;
+                }
+                button{
+                    position: absolute;
+                    width: 20px;
+                    height: 15px;
+                    left: 210px;
+                    font-size: 12px;
+                    top: 5px;
+                    background-color: red;
+                    color: white;
+                    border: none;
+                    box-shadow: 0px 2px 0px 0px red;
+                }
+            }
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            button{
+                margin: 5px;
+                padding: 0.4rem;
+                border-radius: 10px;
+                border: none;
+                background-color: white;
+                box-shadow: 0px 2px 0px 0px gray;
+                transition: .5s;
+            }
+            .btnSort{
+                &:hover{
+                   background-color: orange;
+                   box-shadow: none;
+                   transform: scale(1.1);
+                }
+            }
+            .btnActive{
+                &:hover{
+                    background-color: lime;
+                    box-shadow: none;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
